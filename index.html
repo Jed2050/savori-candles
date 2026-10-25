@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Savori Impact Candles — Hand-Poured Scented Candles</title>
-<meta name="description" content="Hand-poured soy blend scented candles by Savori Impact. Shop Strawberry Element — sweet, fruity and refreshing. Free U.S. shipping on orders $50+.">
+<meta name="description" content="Hand-poured scented candles by Savori Impact. Shop Strawberry Element and Coffee Shop. Free U.S. shipping on orders $50+.">
 <meta property="og:title" content="Savori Impact Candles — Scents that create better days">
-<meta property="og:description" content="Hand-poured soy blend candles. Shop Strawberry Element.">
+<meta property="og:description" content="Hand-poured scented candles. Shop Strawberry Element and Coffee Shop.">
 <meta property="og:image" content="https://candle.savoriimpact.com/img/og.jpg">
 <meta property="og:url" content="https://candle.savoriimpact.com/">
 <meta name="theme-color" content="#7a0f1f">
@@ -47,9 +47,9 @@
       <div class="hero-text">
         <p class="eyebrow">Hand-poured scented candles</p>
         <h1>Scents that create <em>better days.</em></h1>
-        <p class="lead">Premium soy blend candles, poured by hand in the USA. Light one, breathe in, and let your home feel a little sweeter.</p>
+        <p class="lead">Premium coconut wax blend candles, poured by hand in the USA. Light one, breathe in, and let your home feel a little sweeter.</p>
         <div class="hero-cta">
-          <a href="#shop" class="btn btn-primary">Shop Strawberry Element</a>
+          <a href="#shop" class="btn btn-primary">Shop candles</a>
           <a href="#story" class="btn btn-ghost">Our story</a>
         </div>
         <p class="hero-note">Free shipping on orders $50+ · Secure checkout</p>
@@ -64,15 +64,19 @@
   <!-- PROMISES -->
   <section class="promises">
     <div class="wrap promises-in">
-      <div class="promise"><svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-6 14-14C11 5 5 11 5 19zm0 0 7-7"/></svg><span>Premium soy blend wax</span></div>
+      <div class="promise"><svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-6 14-14C11 5 5 11 5 19zm0 0 7-7"/></svg><span>Premium coconut wax blends</span></div>
       <div class="promise"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg><span>Long burning time</span></div>
       <div class="promise"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg><span>Hand poured in the USA</span></div>
-      <div class="promise"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg><span>Clean burn, phthalate free</span></div>
+      <div class="promise"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg><span>Single cotton wick</span></div>
     </div>
   </section>
 
   <!-- PRODUCT -->
   <section class="product" id="shop">
+    <div class="wrap picker-wrap">
+      <p class="eyebrow">Choose your scent</p>
+      <div class="scent-picker" id="scentPicker" role="group" aria-label="Choose your scent"></div>
+    </div>
     <div class="wrap product-in">
       <div class="gallery">
         <div class="gallery-main"><img id="mainImg" src="img/product-white.webp" alt="Strawberry Element scented candle with bamboo lid and fresh strawberries" width="1200" height="1200"></div>
@@ -80,13 +84,13 @@
       </div>
 
       <div class="info">
-        <p class="eyebrow">Scented candle · 8 oz</p>
-        <h2 class="p-title">Strawberry Element</h2>
+        <p class="eyebrow" id="pVariant">Scented candle · 8 oz</p>
+        <h2 class="p-title" id="pTitle">Strawberry Element</h2>
         <p class="price" id="price">$24.99</p>
-        <div class="notes"><span>Sweet</span><span>Fruity</span><span>Refreshing</span></div>
-        <p class="desc">A bright, juicy strawberry scent with a soft floral sweetness — like a basket of fresh-picked berries on a sunny morning. Poured into a glossy white ceramic jar with a natural bamboo lid that looks beautiful on any shelf.</p>
+        <div class="notes" id="pNotes"><span>Sweet</span><span>Fruity</span><span>Refreshing</span></div>
+        <p class="desc" id="pDesc">A bright, juicy strawberry scent with a soft floral sweetness — like a basket of fresh-picked berries on a sunny morning. Poured into a glossy white ceramic jar with a natural bamboo lid that looks beautiful on any shelf.</p>
 
-        <div class="buy">
+        <div class="buy" id="buyRow">
           <div class="qty" aria-label="Quantity">
             <button type="button" id="qtyMinus" aria-label="Decrease quantity">−</button>
             <input id="qty" type="number" min="1" max="20" value="1" inputmode="numeric" aria-label="Quantity">
@@ -95,21 +99,20 @@
           <button class="btn btn-primary btn-wide" id="addToCart">Add to cart</button>
         </div>
         <button class="btn btn-dark btn-block" id="buyNow">Buy it now</button>
-        <p class="ship-note">Get <b>free shipping</b> when you buy 3 or more. Ships from Salisbury, Maryland.</p>
+        <p class="ship-note" id="shipNote">Get <b>free shipping</b> when you buy 3 or more. Ships from Salisbury, Maryland.</p>
 
         <div class="accordion">
           <details open>
             <summary>Details</summary>
-            <ul>
-              <li>Net weight 8 oz</li>
-              <li>Premium soy blend wax, phthalate free</li>
+            <ul id="pDetails">
+              <li>Net weight 8 oz (227 g)</li>
               <li>White ceramic jar with bamboo lid</li>
               <li>Hand poured in the USA</li>
             </ul>
           </details>
           <details>
             <summary>Candle care</summary>
-            <p>Trim the wick to 1/4" before each use. Keep the candle within sight and burn it on a heat-resistant surface. Do not burn for more than 4 hours at a time. Keep away from flammable materials, children and pets.</p>
+            <p>Trim the wick to 1/4" before each use. Keep the candle within sight and burn it on a heat-resistant surface. Do not burn for more than 4 hours at a time. Keep away from flammable materials, children and pets. Discontinue use when 1/2" of wax remains.</p>
           </details>
           <details>
             <summary>Shipping &amp; returns</summary>
@@ -145,7 +148,7 @@
         <p class="eyebrow">Our story</p>
         <h2>Made to make your days better.</h2>
         <p>Savori Impact is a small brand based in Salisbury, Maryland. We believe the right scent can change the feeling of a whole room — and the whole day.</p>
-        <p>Every candle is poured by hand in the USA with a premium soy blend wax for a clean, even burn. No shortcuts, no harsh additives — just a beautiful candle you'll be proud to light or gift.</p>
+        <p>Every candle is poured by hand in small batches in Maryland with premium coconut wax blends and a single cotton wick for a clean, even burn. No shortcuts, no harsh additives — just a beautiful candle you'll be proud to light or gift.</p>
         <p class="signature script">— Savori Impact</p>
       </div>
     </div>
@@ -178,7 +181,7 @@
       <div class="accordion">
         <details><summary>Where do you ship?</summary><p>We currently ship within the United States. Shipping is $5.99, and free on orders of $50 or more.</p></details>
         <details><summary>How do I pay?</summary><p>Checkout is handled securely by Stripe. You can pay with a credit or debit card, and other options like Apple Pay, Google Pay or Cash App Pay when available on your device.</p></details>
-        <details><summary>What is the candle made of?</summary><p>A premium soy blend wax, phthalate free, poured by hand in the USA into a white ceramic jar with a bamboo lid. Net weight 8 oz.</p></details>
+        <details><summary>What are the candles made of?</summary><p>Strawberry Element is poured with a premium coconut soy wax blend; Coffee Shop is poured with premium coconut apricot wax. Both use a single cotton wick in a white ceramic jar with a bamboo lid. Net weight 8 oz (227 g).</p></details>
         <details><summary>Does it make a good gift?</summary><p>Yes! The ceramic jar and bamboo lid make it a beautiful gift for birthdays, holidays, housewarmings — or just because.</p></details>
         <details><summary>What if my candle arrives damaged?</summary><p>Email <a href="mailto:info@savoriimpact.com">info@savoriimpact.com</a> with a photo within 14 days of delivery and we'll make it right.</p></details>
       </div>
@@ -188,8 +191,8 @@
   <!-- CTA -->
   <section class="cta-band">
     <div class="wrap cta-in">
-      <h2>Bring home Strawberry Element.</h2>
-      <p>Sweet · Fruity · Refreshing — $24.99</p>
+      <h2>Find your scent.</h2>
+      <p>Strawberry Element $24.99 · Coffee Shop $25.99</p>
       <a href="#shop" class="btn btn-light">Shop now</a>
     </div>
   </section>
@@ -203,7 +206,8 @@
     </div>
     <div>
       <h4>Shop</h4>
-      <a href="#shop">Strawberry Element</a>
+      <a href="#shop" data-product="strawberry-element">Strawberry Element</a>
+      <a href="#shop" data-product="coffee-shop">Coffee Shop</a>
       <a href="#care">Candle care</a>
       <a href="#faq">FAQ</a>
     </div>

@@ -73,7 +73,7 @@ h1 em,h2 em{font-style:italic;color:var(--red)}
 .gallery{position:sticky;top:96px}
 .gallery-main{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
 .gallery-main img{aspect-ratio:1/1;object-fit:cover;width:100%;transition:opacity .25s}
-.thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:12px}
+.thumbs{display:grid;grid-template-columns:repeat(var(--cols,6),1fr);gap:10px;margin-top:12px}
 .thumb{padding:0;border:2px solid transparent;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff}
 .thumb img{aspect-ratio:1/1;object-fit:cover;width:100%}
 .thumb[aria-current="true"]{border-color:var(--red)}
@@ -193,7 +193,7 @@ h1 em,h2 em{font-style:italic;color:var(--red)}
 }
 @media (max-width:520px){
   .care-grid{grid-template-columns:1fr}
-  .thumbs{grid-template-columns:repeat(6,1fr);gap:6px}
+  .thumbs{gap:6px}
   .buy{flex-direction:column}
   .qty{align-self:flex-start}
   .brand b{font-size:1.05rem}
@@ -201,3 +201,17 @@ h1 em,h2 em{font-style:italic;color:var(--red)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
 .footer .brand{display:flex;margin:0 0 6px}.footer .brand span{display:flex;margin:0}.footer .brand small{color:var(--gold-2)}
 .item .qty{display:inline-flex}.toast{visibility:hidden}.toast.show{visibility:visible}
+
+/* scent picker */
+.picker-wrap{margin-bottom:28px}
+.scent-picker{display:flex;gap:12px;flex-wrap:wrap}
+.scent{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--line);border-radius:16px;padding:8px 18px 8px 8px;cursor:pointer;font:inherit;color:var(--ink);text-align:left;transition:border-color .2s,box-shadow .2s}
+.scent img{width:56px;height:56px;border-radius:10px;object-fit:cover}
+.scent span{display:flex;flex-direction:column;line-height:1.25}
+.scent b{font-family:"Playfair Display",serif;font-size:1.05rem}
+.scent small{color:var(--muted);font-size:.85rem}
+.scent:hover{border-color:var(--gold-2)}
+.scent[aria-pressed="true"]{border-color:var(--red);box-shadow:0 8px 20px -12px rgba(168,20,43,.6)}
+.scent:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+@media (max-width:520px){.scent{flex:1 1 100%}}
+.buy[hidden]{display:none}
