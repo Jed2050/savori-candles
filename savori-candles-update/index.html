@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Savori Impact Candles — Hand-Poured Scented Candles</title>
+<meta name="description" content="Hand-poured scented candles by Savori Impact. Shop Strawberry Element and Coffee Shop. Free U.S. shipping on every order.">
+<meta property="og:title" content="Savori Impact Candles — Scents that create better days">
+<meta property="og:description" content="Hand-poured scented candles. Shop Strawberry Element and Coffee Shop.">
+<meta property="og:image" content="https://candle.savoriimpact.com/img/og.jpg">
+<meta property="og:url" content="https://candle.savoriimpact.com/">
+<meta name="theme-color" content="#7a0f1f">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="announce">Free U.S. shipping on every order &nbsp;·&nbsp; Hand poured in the USA</div>
+
+<header class="header">
+  <div class="wrap header-in">
+    <a href="#top" class="brand" aria-label="Savori Impact Candles home">
+      <img src="img/logo-s.png" alt="" width="40" height="40">
+      <span><b>Savori Impact</b><small>Candles</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#collection">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#care">Candle Care</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="cart-btn" id="cartOpen" aria-label="Open cart" hidden>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <p class="eyebrow">Hand-poured scented candles</p>
+        <h1>Scents that create <em>better days.</em></h1>
+        <p class="lead">Premium coconut wax blend candles, poured by hand in the USA. Light one, breathe in, and let your home feel a little sweeter.</p>
+        <div class="hero-cta">
+          <a href="#collection" class="btn btn-primary">Shop the collection</a>
+          <a href="#story" class="btn btn-ghost">Our story</a>
+        </div>
+        <p class="hero-note">Free shipping on every order · Secure checkout by Stripe</p>
+      </div>
+      <div class="hero-img">
+        <img src="img/living-room.webp" alt="Strawberry Element candle lit on a marble tray in a cozy living room" width="1200" height="1200" fetchpriority="high">
+        <div class="hero-tag"><span class="script">More than a candle</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISES -->
+  <section class="promises">
+    <div class="wrap promises-in">
+      <div class="promise"><svg viewBox="0 0 24 24"><path d="M5 19c8 0 14-6 14-14C11 5 5 11 5 19zm0 0 7-7"/></svg><span>Premium coconut wax blends</span></div>
+      <div class="promise"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg><span>Long burning time</span></div>
+      <div class="promise"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg><span>Hand poured in the USA</span></div>
+      <div class="promise"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg><span>Single cotton wick</span></div>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="collection" id="collection">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The collection</p>
+        <h2>Find your <em>signature scent.</em></h2>
+        <p>Every candle is hand-poured in small batches in Maryland, in a glossy ceramic jar with a natural bamboo lid. Free U.S. shipping on every order.</p>
+      </div>
+      <div class="grid" id="collectionGrid"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCT -->
+  <section class="product" id="shop">
+    <div class="wrap picker-wrap">
+      <p class="eyebrow">Scent</p>
+      <div class="scent-picker" id="scentPicker" role="group" aria-label="Choose your scent"></div>
+    </div>
+    <div class="wrap product-in">
+      <div class="gallery">
+        <div class="gallery-main"><img id="mainImg" src="img/product-white.webp" alt="Strawberry Element scented candle with bamboo lid and fresh strawberries" width="1200" height="1200"></div>
+        <div class="thumbs" id="thumbs" role="list"></div>
+      </div>
+
+      <div class="info">
+        <p class="eyebrow" id="pVariant">Scented candle · 8 oz</p>
+        <h2 class="p-title" id="pTitle">Strawberry Element</h2>
+        <p class="price" id="price">$24.99</p>
+        <div class="notes" id="pNotes"><span>Sweet</span><span>Fruity</span><span>Refreshing</span></div>
+        <p class="desc" id="pDesc">A bright, juicy strawberry scent with a soft floral sweetness — like a basket of fresh-picked berries on a sunny morning. Poured into a glossy white ceramic jar with a natural bamboo lid that looks beautiful on any shelf.</p>
+
+        <div class="buy" id="buyRow">
+          <div class="qty" aria-label="Quantity">
+            <button type="button" id="qtyMinus" aria-label="Decrease quantity">−</button>
+            <input id="qty" type="number" min="1" max="20" value="1" inputmode="numeric" aria-label="Quantity">
+            <button type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="btn btn-primary btn-wide" id="addToCart">Add to cart</button>
+        </div>
+        <button class="btn btn-dark btn-block" id="buyNow">Buy it now</button>
+        <p class="ship-note" id="shipNote">Get <b>free shipping</b> when you buy 3 or more. Ships from Salisbury, Maryland.</p>
+        <ul class="trust">
+          <li><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Secure checkout by Stripe</li>
+          <li><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>Ships in 1–2 business days</li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>14-day damage guarantee</li>
+        </ul>
+        <p class="pay-methods">Pay with card, Apple Pay, Cash App Pay or Klarna</p>
+
+        <div class="accordion">
+          <details open>
+            <summary>Details</summary>
+            <ul id="pDetails">
+              <li>Net weight 8 oz (227 g)</li>
+              <li>White ceramic jar with bamboo lid</li>
+              <li>Hand poured in the USA</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Candle care</summary>
+            <p>Trim the wick to 1/4" before each use. Keep the candle within sight and burn it on a heat-resistant surface. Do not burn for more than 4 hours at a time. Keep away from flammable materials, children and pets. Discontinue use when 1/2" of wax remains.</p>
+          </details>
+          <details>
+            <summary>Shipping &amp; returns</summary>
+            <p>We ship within the United States, and shipping is free on every order. If your candle arrives damaged, email <a href="mailto:info@savoriimpact.com">info@savoriimpact.com</a> with a photo within 14 days and we'll make it right.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE -->
+  <section class="lifestyle">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="script big">More than a candle</p>
+        <h2>A little moment, just for you.</h2>
+        <p>Strike a match, close your eyes, and breathe in. Whether it's sweet strawberries or a warm cup of coffee, the right scent turns any evening into something special.</p>
+      </div>
+      <div class="mosaic">
+        <figure><img src="img/lighting.webp" alt="Lighting the Strawberry Element candle with a match" loading="lazy" width="675" height="1200"></figure>
+        <figure><img src="img/coffee-burlap.webp" alt="Coffee Shop candle with coffee beans and a burlap sack" loading="lazy" width="1200" height="1200"></figure>
+        <figure><img src="img/cozy-vertical.webp" alt="Strawberry Element candle glowing on a coffee table" loading="lazy" width="675" height="1200"></figure>
+        <figure><img src="img/coffee-latte.webp" alt="Coffee Shop candle next to a latte" loading="lazy" width="1200" height="1200"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap story-in">
+      <div class="story-img"><img src="img/open-rustic.webp" alt="Strawberry Element candle with the bamboo lid off on a wooden board" loading="lazy" width="1200" height="1200"></div>
+      <div class="story-text">
+        <p class="eyebrow">Our story</p>
+        <h2>Made to make your days better.</h2>
+        <p>Savori Impact is a small brand based in Salisbury, Maryland. We believe the right scent can change the feeling of a whole room — and the whole day.</p>
+        <p>Every candle is poured by hand in small batches in Maryland with premium coconut wax blends and a single cotton wick for a clean, even burn. No shortcuts, no harsh additives — just a beautiful candle you'll be proud to light or gift.</p>
+        <p class="signature script">— Savori Impact</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARE -->
+  <section class="care" id="care">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Candle care</p>
+        <h2>Get the best burn, every time.</h2>
+      </div>
+      <div class="care-grid">
+        <div class="care-card"><span class="num">1</span><h3>Trim the wick</h3><p>Trim the wick to 1/4" before each use for a clean, steady flame.</p></div>
+        <div class="care-card"><span class="num">2</span><h3>Stay close</h3><p>Keep your candle within sight and burn it on a heat-resistant surface.</p></div>
+        <div class="care-card"><span class="num">3</span><h3>Up to 4 hours</h3><p>Do not burn for more than 4 hours at a time. Let it cool before relighting.</p></div>
+        <div class="care-card"><span class="num">4</span><h3>Safe spot</h3><p>Keep away from flammable materials, children and pets.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap faq-in">
+      <div class="section-head left">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions? We've got you.</h2>
+        <p>Still need help? Email <a href="mailto:info@savoriimpact.com">info@savoriimpact.com</a>.</p>
+      </div>
+      <div class="accordion">
+        <details><summary>Where do you ship?</summary><p>We currently ship within the United States, and shipping is free on every order.</p></details>
+        <details><summary>How do I pay?</summary><p>Checkout is handled securely by Stripe. You can pay with a credit or debit card, and other options like Apple Pay, Google Pay or Cash App Pay when available on your device.</p></details>
+        <details><summary>What are the candles made of?</summary><p>Strawberry Element is poured with a premium coconut soy wax blend; Coffee Shop is poured with premium coconut apricot wax. Both use a single cotton wick in a white ceramic jar with a bamboo lid. Net weight 8 oz (227 g).</p></details>
+        <details><summary>Does it make a good gift?</summary><p>Yes! The ceramic jar and bamboo lid make it a beautiful gift for birthdays, holidays, housewarmings — or just because.</p></details>
+        <details><summary>What if my candle arrives damaged?</summary><p>Email <a href="mailto:info@savoriimpact.com">info@savoriimpact.com</a> with a photo within 14 days of delivery and we'll make it right.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap cta-in">
+      <h2>Find your scent.</h2>
+      <p>Strawberry Element $24.99 · Coffee Shop $25.99</p>
+      <a href="#collection" class="btn btn-light">Shop the collection</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>
+      <a href="#top" class="brand light"><img src="img/logo-s.png" alt="" width="36" height="36"><span><b>Savori Impact</b><small>Candles</small></span></a>
+      <p class="muted">Scents create better days.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="#shop" data-product="strawberry-element">Strawberry Element</a>
+      <a href="#shop" data-product="coffee-shop">Coffee Shop</a>
+      <a href="#care">Candle care</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:info@savoriimpact.com">info@savoriimpact.com</a>
+      <a href="https://www.instagram.com/savoriimpact" target="_blank" rel="noopener">Instagram @savoriimpact</a>
+      <span class="muted">Salisbury, MD 21801, USA</span>
+    </div>
+  </div>
+  <div class="wrap copyright">© <span id="year">2026</span> Savori Impact LLC · <a href="https://www.savoriimpact.com">savoriimpact.com</a></div>
+</footer>
+
+<!-- MOBILE STICKY BUY BAR -->
+<div class="sticky-buy" id="stickyBuy" aria-hidden="true">
+  <img id="stickyImg" src="img/product-white-thumb.webp" alt="" width="48" height="48">
+  <div><b id="stickyName">Strawberry Element</b><span id="stickyPrice">$24.99 · Free shipping</span></div>
+  <button class="btn btn-primary" id="stickyBtn" type="button" tabindex="-1">Buy now</button>
+</div>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>Your cart</h3>
+    <button class="icon-btn" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="ship-progress" id="shipProgress">
+    <p id="shipMsg"></p>
+    <div class="bar"><span id="shipBar"></span></div>
+  </div>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="row"><span>Subtotal</span><b id="subtotal">$0.00</b></div>
+    <p class="muted small">Shipping is calculated at checkout.</p>
+    <button class="btn btn-primary btn-block" id="checkoutBtn">Checkout</button>
+    <p class="error" id="checkoutError" hidden></p>
+    <p class="secure">🔒 Secure checkout by Stripe</p>
+  </div>
+</aside>
+
+<!-- ORDER CONFIRMATION -->
+<div class="modal" id="thanks" hidden role="dialog" aria-modal="true" aria-labelledby="thanksTitle">
+  <div class="modal-card">
+    <img src="img/logo-s.png" alt="" width="56" height="56">
+    <h3 id="thanksTitle">Thank you for your order!</h3>
+    <p>Your payment went through. A receipt is on its way to your email, and we'll get your candles ready to ship.</p>
+    <button class="btn btn-primary" id="thanksClose">Continue shopping</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
