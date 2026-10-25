@@ -248,7 +248,7 @@ h1 em,h2 em{font-style:italic;color:var(--red)}
 
 /* trust row */
 .trust{list-style:none;padding:16px 18px;margin:0 0 10px;display:grid;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
-.trust li{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:500}
+.trust li{list-style:none;display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:500}
 .trust svg{width:20px;height:20px;flex:none;fill:none;stroke:var(--red);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .pay-methods{font-size:.8rem;color:var(--muted);margin:0 0 22px;text-align:center}
 .mosaic img{aspect-ratio:9/16;object-fit:cover}
