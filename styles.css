@@ -215,3 +215,4 @@ h1 em,h2 em{font-style:italic;color:var(--red)}
 .scent:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
 @media (max-width:520px){.scent{flex:1 1 100%}}
 .buy[hidden]{display:none}
+.cart-btn[hidden]{display:none}

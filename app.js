@@ -8,6 +8,8 @@ const PRODUCTS = {
     variant: "Scented candle · 8 oz",
     price: 24.99,
     image: "img/product-white-thumb.webp",
+    paymentLink: "https://buy.stripe.com/7sY3cx0vzdKP93lcpl6AM01",
+    shipNote: "<b>Free shipping on every order.</b> Ships from Salisbury, Maryland.",
     notes: ["Sweet", "Fruity", "Refreshing"],
     desc: "A bright, juicy strawberry scent with a soft floral sweetness — like a basket of fresh-picked berries on a sunny morning. Poured into a glossy white ceramic jar with a natural bamboo lid that looks beautiful on any shelf.",
     details: ["Net weight 8 oz (227 g)", "Premium coconut soy wax blend, phthalate free", "Single cotton wick", "White ceramic jar with bamboo lid", "Hand poured in the USA"],
