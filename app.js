@@ -76,6 +76,44 @@ picker.addEventListener("click", (e) => {
 document.querySelectorAll("[data-product]").forEach((a) =>
   a.addEventListener("click", () => selectProduct(a.dataset.product, true)));
 
+// ---------- collection grid ----------
+const grid = $("#collectionGrid");
+grid.innerHTML = Object.entries(PRODUCTS).map(([id, p]) => {
+  const alt = p.gallery[1] ? p.gallery[1][0] : p.gallery[0][0];
+  return `<article class="card">
+    <a href="#shop" class="card-img" data-view="${id}" aria-label="View ${esc(p.name)}">
+      <img src="img/${p.gallery[0][0]}.webp" alt="${esc(p.name)} scented candle" loading="lazy" width="1200" height="1200">
+      <img class="alt" src="img/${alt}.webp" alt="" loading="lazy" width="1200" height="1200">
+      <span class="badge">Free shipping</span>
+    </a>
+    <div class="card-body">
+      <h3>${esc(p.name)}</h3>
+      <p class="card-notes">${p.notes.map(esc).join(" · ")}</p>
+      <div class="card-foot">
+        <span class="card-price">${money(p.price)}</span>
+        <span class="card-size">8 oz</span>
+      </div>
+      <div class="card-actions">
+        <button type="button" class="btn btn-ghost btn-sm" data-view="${id}">View details</button>
+        ${p.paymentLink ? `<a class="btn btn-primary btn-sm" href="${p.paymentLink}">Buy now</a>` : ""}
+      </div>
+    </div>
+  </article>`;
+}).join("") + `<article class="card card-soon" aria-label="More scents coming soon">
+    <div class="soon-in">
+      <img src="img/logo-s.png" alt="" width="64" height="64">
+      <h3>More scents coming soon</h3>
+      <p>New hand-poured fragrances are on the way. Follow <a href="https://www.instagram.com/savoriimpact" target="_blank" rel="noopener">@savoriimpact</a> to be the first to know.</p>
+    </div>
+  </article>`;
+grid.addEventListener("click", (e) => {
+  const v = e.target.closest("[data-view]");
+  if (!v) return;
+  e.preventDefault();
+  selectProduct(v.dataset.view, true);
+  $("#shop").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 // ---------- gallery + product info ----------
 const thumbs = $("#thumbs");
 function showImage(file, alt) {
@@ -115,6 +153,9 @@ function selectProduct(id, updateHash) {
     });
     thumbs.appendChild(b);
   });
+  $("#stickyImg").src = p.image;
+  $("#stickyName").textContent = p.name;
+  $("#stickyPrice").textContent = money(p.price) + (p.paymentLink ? " · Free shipping" : "");
   const [f0, a0] = p.gallery[0];
   showImage(f0, a0);
   if (updateHash) history.replaceState(null, "", "#" + id);
@@ -251,6 +292,21 @@ if (params.get("order") === "success") {
 }
 if (params.has("order")) history.replaceState(null, "", location.pathname + location.hash);
 $("#thanksClose").onclick = () => ($("#thanks").hidden = true);
+
+// ---------- sticky buy bar (mobile) ----------
+$("#stickyBtn").onclick = () => $("#buyNow").click();
+if ("IntersectionObserver" in window) {
+  const bar = $("#stickyBuy");
+  let buyVisible = true, shopVisible = false;
+  const update = () => {
+    const show = shopVisible && !buyVisible;
+    bar.classList.toggle("show", show);
+    bar.setAttribute("aria-hidden", String(!show));
+    $("#stickyBtn").tabIndex = show ? 0 : -1;
+  };
+  new IntersectionObserver(([e]) => { buyVisible = e.isIntersecting; update(); }).observe($("#buyNow"));
+  new IntersectionObserver(([e]) => { shopVisible = e.isIntersecting; update(); }).observe($("#shop"));
+}
 
 $("#year").textContent = new Date().getFullYear();
 selectProduct(current, false);

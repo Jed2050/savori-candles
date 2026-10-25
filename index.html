@@ -27,7 +27,7 @@
       <span><b>Savori Impact</b><small>Candles</small></span>
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#shop">Shop</a>
+      <a href="#collection">Shop</a>
       <a href="#story">Our Story</a>
       <a href="#care">Candle Care</a>
       <a href="#faq">FAQ</a>
@@ -49,7 +49,7 @@
         <h1>Scents that create <em>better days.</em></h1>
         <p class="lead">Premium coconut wax blend candles, poured by hand in the USA. Light one, breathe in, and let your home feel a little sweeter.</p>
         <div class="hero-cta">
-          <a href="#shop" class="btn btn-primary">Shop candles</a>
+          <a href="#collection" class="btn btn-primary">Shop the collection</a>
           <a href="#story" class="btn btn-ghost">Our story</a>
         </div>
         <p class="hero-note">Free shipping on every order · Secure checkout by Stripe</p>
@@ -71,10 +71,22 @@
     </div>
   </section>
 
+  <!-- COLLECTION -->
+  <section class="collection" id="collection">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The collection</p>
+        <h2>Find your <em>signature scent.</em></h2>
+        <p>Every candle is hand-poured in small batches in Maryland, in a glossy ceramic jar with a natural bamboo lid. Free U.S. shipping on every order.</p>
+      </div>
+      <div class="grid" id="collectionGrid"></div>
+    </div>
+  </section>
+
   <!-- PRODUCT -->
   <section class="product" id="shop">
     <div class="wrap picker-wrap">
-      <p class="eyebrow">Choose your scent</p>
+      <p class="eyebrow">Scent</p>
       <div class="scent-picker" id="scentPicker" role="group" aria-label="Choose your scent"></div>
     </div>
     <div class="wrap product-in">
@@ -100,6 +112,12 @@
         </div>
         <button class="btn btn-dark btn-block" id="buyNow">Buy it now</button>
         <p class="ship-note" id="shipNote">Get <b>free shipping</b> when you buy 3 or more. Ships from Salisbury, Maryland.</p>
+        <ul class="trust">
+          <li><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Secure checkout by Stripe</li>
+          <li><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>Ships in 1–2 business days</li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>14-day damage guarantee</li>
+        </ul>
+        <p class="pay-methods">Pay with card, Apple Pay, Cash App Pay or Klarna</p>
 
         <div class="accordion">
           <details open>
@@ -129,13 +147,13 @@
       <div class="section-head">
         <p class="script big">More than a candle</p>
         <h2>A little moment, just for you.</h2>
-        <p>Strike a match, close your eyes, and breathe in. Strawberry Element fills the room with a sweet, fresh scent that makes any evening feel special.</p>
+        <p>Strike a match, close your eyes, and breathe in. Whether it's sweet strawberries or a warm cup of coffee, the right scent turns any evening into something special.</p>
       </div>
       <div class="mosaic">
         <figure><img src="img/lighting.webp" alt="Lighting the Strawberry Element candle with a match" loading="lazy" width="675" height="1200"></figure>
-        <figure><img src="img/scent-swirl.webp" alt="Enjoying the strawberry scent of the candle" loading="lazy" width="675" height="1200"></figure>
+        <figure><img src="img/coffee-burlap.webp" alt="Coffee Shop candle with coffee beans and a burlap sack" loading="lazy" width="1200" height="1200"></figure>
         <figure><img src="img/cozy-vertical.webp" alt="Strawberry Element candle glowing on a coffee table" loading="lazy" width="675" height="1200"></figure>
-        <figure><img src="img/holding.webp" alt="Holding a lit Strawberry Element candle" loading="lazy" width="675" height="1200"></figure>
+        <figure><img src="img/coffee-latte.webp" alt="Coffee Shop candle next to a latte" loading="lazy" width="1200" height="1200"></figure>
       </div>
     </div>
   </section>
@@ -193,7 +211,7 @@
     <div class="wrap cta-in">
       <h2>Find your scent.</h2>
       <p>Strawberry Element $24.99 · Coffee Shop $25.99</p>
-      <a href="#shop" class="btn btn-light">Shop now</a>
+      <a href="#collection" class="btn btn-light">Shop the collection</a>
     </div>
   </section>
 </main>
@@ -220,6 +238,13 @@
   </div>
   <div class="wrap copyright">© <span id="year">2026</span> Savori Impact LLC · <a href="https://www.savoriimpact.com">savoriimpact.com</a></div>
 </footer>
+
+<!-- MOBILE STICKY BUY BAR -->
+<div class="sticky-buy" id="stickyBuy" aria-hidden="true">
+  <img id="stickyImg" src="img/product-white-thumb.webp" alt="" width="48" height="48">
+  <div><b id="stickyName">Strawberry Element</b><span id="stickyPrice">$24.99 · Free shipping</span></div>
+  <button class="btn btn-primary" id="stickyBtn" type="button" tabindex="-1">Buy now</button>
+</div>
 
 <!-- CART DRAWER -->
 <div class="overlay" id="overlay" hidden></div>
