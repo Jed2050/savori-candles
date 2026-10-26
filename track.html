@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track Your Order — Savori Impact Candles</title>
+<meta name="description" content="Track your Savori Impact Candles order. Enter the tracking number from your shipping email.">
+<meta name="theme-color" content="#7a0f1f">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+
+<div class="announce">Free U.S. shipping on every order &nbsp;·&nbsp; Hand poured in the USA</div>
+
+<header class="header">
+  <div class="wrap header-in">
+    <a href="./" class="brand" aria-label="Savori Impact Candles home">
+      <img src="img/logo-s.png" alt="" width="40" height="40">
+      <span><b>Savori Impact</b><small>Candles</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="./#collection">Shop</a>
+      <a href="./#story">Our Story</a>
+      <a href="./#faq">FAQ</a>
+      <a href="track.html" aria-current="page">Track Order</a>
+    </nav>
+    <a href="./#collection" class="btn btn-primary btn-sm header-shop">Shop</a>
+  </div>
+</header>
+
+<main class="track">
+  <div class="wrap track-in">
+    <div class="section-head">
+      <p class="eyebrow">Order tracking</p>
+      <h1 class="track-title">Where's my <em>candle?</em></h1>
+      <p>Enter the tracking number from your shipping email to see where your package is.</p>
+    </div>
+
+    <form class="track-card" id="trackForm" novalidate>
+      <label for="trackNum">Tracking number</label>
+      <div class="track-row">
+        <input id="trackNum" name="n" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="e.g. 9400 1000 0000 0000 0000 00" aria-describedby="trackHelp trackErr">
+        <button class="btn btn-primary" type="submit">Track</button>
+      </div>
+      <p class="small muted" id="trackHelp">Most orders ship with USPS. Your tracking number is in the email we send when your order ships.</p>
+      <p class="error" id="trackErr" role="alert" hidden></p>
+
+      <div class="track-result" id="trackResult" hidden>
+        <p class="small muted">Carrier: <b id="carrierName">USPS</b> · <span id="trackShown"></span></p>
+        <a class="btn btn-dark btn-block" id="carrierLink" href="#" target="_blank" rel="noopener">View live tracking</a>
+        <p class="small muted center">Opens the carrier's official tracking page in a new tab.</p>
+      </div>
+    </form>
+
+    <ol class="steps" aria-label="How your order ships">
+      <li><span class="num">1</span><div><h3>Order placed</h3><p>You get a payment receipt from Stripe right away.</p></div></li>
+      <li><span class="num">2</span><div><h3>Hand-packed</h3><p>We pack your candle with care within 1–2 business days.</p></div></li>
+      <li><span class="num">3</span><div><h3>Shipped</h3><p>You get an email with your tracking number. USPS delivery takes about 3–7 business days.</p></div></li>
+      <li><span class="num">4</span><div><h3>Delivered</h3><p>Light it, breathe in, and enjoy.</p></div></li>
+    </ol>
+
+    <div class="track-help">
+      <h2>No tracking number yet?</h2>
+      <p>Orders ship within 1–2 business days, and we email your tracking number as soon as your package is on its way. Check your spam folder too. Still can't find it? Email <a href="mailto:info@savoriimpact.com">info@savoriimpact.com</a> with the email address you used at checkout and we'll help.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>
+      <a href="./" class="brand light"><img src="img/logo-s.png" alt="" width="36" height="36"><span><b>Savori Impact</b><small>Candles</small></span></a>
+      <p class="muted">Scents create better days.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="./#collection">All candles</a>
+      <a href="track.html">Track your order</a>
+      <a href="./#faq">FAQ</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:info@savoriimpact.com">info@savoriimpact.com</a>
+      <a href="https://www.instagram.com/savoriimpact" target="_blank" rel="noopener">Instagram @savoriimpact</a>
+      <span class="muted">Salisbury, MD 21801, USA</span>
+    </div>
+  </div>
+  <div class="wrap copyright">© <span id="year">2026</span> Savori Impact LLC · <a href="https://www.savoriimpact.com">savoriimpact.com</a></div>
+</footer>
+
+<script>
+(function () {
+  var CARRIERS = {
+    usps: { name: "USPS", url: function (n) { return "https://tools.usps.com/go/TrackConfirmAction?tLabels=" + n; } },
+    ups: { name: "UPS", url: function (n) { return "https://www.ups.com/track?tracknum=" + n; } },
+    fedex: { name: "FedEx", url: function (n) { return "https://www.fedex.com/fedextrack/?trknbr=" + n; } }
+  };
+  function clean(v) { return String(v || "").toUpperCase().replace(/[^0-9A-Z]/g, ""); }
+  function detect(n) {
+    if (/^1Z[0-9A-Z]{16}$/.test(n)) return "ups";
+    if (/^[A-Z]{2}\d{9}US$/.test(n)) return "usps";
+    if (/^\d{20,22}$/.test(n) || /^9[1-5]\d{18,24}$/.test(n)) return "usps";
+    if (/^\d{12}$/.test(n) || /^\d{15}$/.test(n)) return "fedex";
+    if (/^\d{10,30}$/.test(n)) return "usps";
+    return null;
+  }
+  var form = document.getElementById("trackForm");
+  var input = document.getElementById("trackNum");
+  var err = document.getElementById("trackErr");
+  var res = document.getElementById("trackResult");
+  function run(raw, focusLink) {
+    var n = clean(raw);
+    err.hidden = true; res.hidden = true;
+    if (!n) { err.textContent = "Please enter your tracking number."; err.hidden = false; return; }
+    var c = detect(n);
+    if (!c) { err.textContent = "That doesn't look like a USPS, UPS or FedEx tracking number. Please check it and try again, or email info@savoriimpact.com."; err.hidden = false; return; }
+    document.getElementById("carrierName").textContent = CARRIERS[c].name;
+    document.getElementById("trackShown").textContent = n;
+    var link = document.getElementById("carrierLink");
+    link.href = CARRIERS[c].url(encodeURIComponent(n));
+    res.hidden = false;
+    if (focusLink) link.focus();
+  }
+  form.addEventListener("submit", function (e) { e.preventDefault(); run(input.value, true); });
+  var q = new URLSearchParams(location.search).get("n");
+  if (q) { input.value = q; run(q, false); }
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

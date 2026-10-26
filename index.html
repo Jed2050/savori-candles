@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -31,7 +31,9 @@
       <a href="#story">Our Story</a>
       <a href="#care">Candle Care</a>
       <a href="#faq">FAQ</a>
+      <a href="track.html">Track Order</a>
     </nav>
+    <a href="track.html" class="btn btn-ghost btn-sm header-shop">Track order</a>
     <button class="cart-btn" id="cartOpen" aria-label="Open cart" hidden>
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
       <span class="cart-count" id="cartCount">0</span>
@@ -197,6 +199,7 @@
         <p>Still need help? Email <a href="mailto:info@savoriimpact.com">info@savoriimpact.com</a>.</p>
       </div>
       <div class="accordion">
+        <details><summary>How do I track my order?</summary><p>We email your tracking number as soon as your order ships (within 1–2 business days). Enter it on our <a href="track.html">Track Order</a> page, or click the link in the email.</p></details>
         <details><summary>Where do you ship?</summary><p>We currently ship within the United States, and shipping is free on every order.</p></details>
         <details><summary>How do I pay?</summary><p>Checkout is handled securely by Stripe. You can pay with a credit or debit card, and other options like Apple Pay, Google Pay or Cash App Pay when available on your device.</p></details>
         <details><summary>What are the candles made of?</summary><p>Strawberry Element is poured with a premium coconut soy wax blend; Coffee Shop is poured with premium coconut apricot wax; Vanilla Orchid is poured with premium coconut soy wax. All use a single cotton wick in a white ceramic jar with a bamboo lid. Net weight 8 oz (227 g).</p></details>
@@ -227,6 +230,7 @@
       <a href="#shop" data-product="strawberry-element">Strawberry Element</a>
       <a href="#shop" data-product="coffee-shop">Coffee Shop</a>
       <a href="#shop" data-product="vanilla-orchid">Vanilla Orchid</a>
+      <a href="track.html">Track your order</a>
       <a href="#care">Candle care</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -273,13 +277,13 @@
   <div class="modal-card">
     <img src="img/logo-s.png" alt="" width="56" height="56">
     <h3 id="thanksTitle">Thank you for your order!</h3>
-    <p>Your payment went through. A receipt is on its way to your email, and we'll get your candles ready to ship.</p>
+    <p>Your payment went through and a receipt is on its way to your email. We'll pack your candle within 1–2 business days and email you a tracking number you can follow on our <a href="track.html">Track Order</a> page.</p>
     <button class="btn btn-primary" id="thanksClose">Continue shopping</button>
   </div>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
