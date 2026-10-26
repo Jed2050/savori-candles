@@ -43,6 +43,26 @@ const PRODUCTS = {
       ["coffee-living", "Coffee Shop candle glowing in a cozy living room"],
     ],
   },
+  "vanilla-orchid": {
+    name: "Vanilla Orchid",
+    variant: "Scented candle · 8 oz",
+    price: 25.99,
+    image: "img/vanilla-white-thumb.webp",
+    paymentLink: "https://buy.stripe.com/9B614p5PT6in4N560X6AM02",
+    shipNote: "<b>Free shipping on every order.</b> Ships from Salisbury, Maryland.",
+    notes: ["Creamy", "Floral", "Comforting"],
+    desc: "A creamy, comforting vanilla softened with delicate orchid florals — warm, elegant and relaxing. Hand-poured in small batches with premium coconut soy wax and a single cotton wick, in a glossy white ceramic jar with a natural bamboo lid. A beautiful gift for anyone who loves a cozy, clean scent.",
+    details: ["Net weight 8 oz (227 g)", "Premium coconut soy wax", "Single cotton wick", "Ingredients: coconut soy wax, fragrance (vanilla orchid), essential oils, natural color", "White ceramic jar with bamboo lid", "Hand poured in Maryland, USA"],
+    gallery: [
+      ["vanilla-white", "Vanilla Orchid scented candle lit with bamboo lid"],
+      ["vanilla-lid", "Vanilla Orchid candle with the bamboo lid on"],
+      ["vanilla-marble", "Vanilla Orchid candle with orchids and vanilla beans"],
+      ["vanilla-living", "Vanilla Orchid candle glowing in a cozy living room"],
+      ["vanilla-front", "Front label of the Vanilla Orchid candle"],
+      ["vanilla-back-label", "Back label with ingredients and directions"],
+      ["vanilla-holding", "Enjoying the scent of the Vanilla Orchid candle"],
+    ],
+  },
 };
 const DEFAULT_ID = "strawberry-element";
 const DEFAULT_SHIP_NOTE = "Get <b>free shipping</b> when you buy 3 or more. Ships from Salisbury, Maryland.";
